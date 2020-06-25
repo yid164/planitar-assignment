@@ -1,24 +1,11 @@
-# planitar-assignment
+# Planitar Home Assignment For the Interview
 
-## Project setup
-```
-npm install
-```
+## Part I
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+``Build a web server implementing the API described below to run a wiki. In this case, a wiki is
+  basically a key-value storage. You can store any content under a certain name. Later you
+  can retrieve the latest stored content for a particular name.``
 
-### Compiles and minifies for production
-```
-npm run build
-```
+#### Solution: 
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+```I will use GoLang to solve this problem```
