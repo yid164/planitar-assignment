@@ -1,0 +1,24 @@
+{
+  "articles":[
+    {
+      "name": "Ford Mustang",
+      "content":"The Ford Mustang is a series of American automobiles manufactured by Ford."
+    },
+    {
+      "name": "Chevrolet Camaro",
+      "content": "The Chevrolet Camaro is a mid-size American automobile manufactured by Chevrolet."
+    },
+    {
+      "name": "Dodge Challenger",
+      "content": "The Dodge Challenger is the name of three different generations of automobiles (two of those being pony cars) produced by American automobile manufacturer Dodge."
+    },
+    {
+      "name":"Nissan GT-R",
+      "content": "The Nissan GT-R is a high-performance sports car and grand tourer produced by Nissan, which was unveiled in 2007. It is the successor to the Skyline GT-R, although no longer part of the Skyline range itself, that name now being used for Nissan's luxury-sport market."
+    },
+    {
+      "name":"Mazda RX-7",
+      "content": "The Mazda RX-7 is a front/mid-engine, rear-wheel-drive, rotary engine-powered sports car that was manufactured and marketed by Mazda from 1978 to 2002 across three generations, all of which made use of a compact, lightweight Wankel rotary engine"
+    }
+  ]
+}
