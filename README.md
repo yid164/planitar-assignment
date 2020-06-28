@@ -8,4 +8,9 @@
 
 #### Solution: 
 
-```I will use GoLang to solve this problem```
+```I impelemented the GET, PUT API on the port 9090```
+
+#### Testing: 
+
+``` I tested the code on the Postman, it returns all the requirmental code ```
+
