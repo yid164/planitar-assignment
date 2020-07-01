@@ -1,20 +1,22 @@
 <template>
-    <v-container>
+    <v-card id="home"
+            class="mx-auto"
+            color="white"
+            width="500px">
         <v-list>
-            <v-list-item-group v-model="model" mandatory color="indigo">
+            <v-list-item-group v-model="all_info.name" mandatory color="indigo">
                 <v-list-item
                         v-for="article in all_info"
                         :key="article.name"
                 >
-
-                    <v-list-item-content center>
-                        <v-list-item-title v-text="article.name" @click="jumpTo(article.name)"></v-list-item-title>
+                    <v-list-item-content>
+                        <v-btn text color="black accent-4" @click="jumpTo(article.name)">{{article.name}}</v-btn>
                     </v-list-item-content>
                 </v-list-item>
             </v-list-item-group>
         </v-list>
 
-    </v-container>
+    </v-card>
 </template>
 
 <script>
@@ -23,7 +25,6 @@
         data(){
             return {
                 all_info: [],
-                model: 1,
             }
         },
         methods:{
@@ -40,7 +41,7 @@
                     })
             },
             jumpTo:function (name) {
-                this.$router.push('/'+name);
+               this.$router.push('/'+name);
             }
         },
 
