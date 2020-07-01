@@ -16,7 +16,7 @@
 
 #### How to run it
 
-```in the back-end folder, please run go run main.go```
+`go run main.go`
 
 ##### How to test it
 ```go test ```
