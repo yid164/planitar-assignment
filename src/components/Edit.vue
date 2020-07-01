@@ -1,24 +1,25 @@
 <template>
     <div>
-        <header>
-            {{articleName}}
-        </header>
-        <form v-if="!readyPreview">
-            <textarea v-model="currentContent"></textarea>
-            <button @click="preview()">preview</button>
-        </form>
-        <div v-else>
-            <div v-if="currentContent === '' ">
-                <p>No article with this exact name found， Use Edit button in the header to add it</p>
+        <v-col>
+            <v-list-item-title>{{articleName}}</v-list-item-title>
+            <div v-if="!readyPreview">
+                <v-textarea v-model="currentContent"></v-textarea>
             </div>
             <div v-else>
-                <v-html>{{currentContent}}</v-html>
+                <div v-if="currentContent === ''">
+                    <p>No article with this exact name found， Use Edit button in the header to add it</p>
+                </div>
+                <div v-else>
+                    <html>{{currentContent}}</html>
+                    <v-btn @click="closePreview()">Close</v-btn>
+                </div>
             </div>
-            <button @click="closePreview()">Close</button>
-        </div>
-
-        <button @click="save()">Save</button>
-        <button @click="cancel()">Cancel</button>
+        </v-col>
+        <v-row align="center">
+            <v-btn @click="preview()">Preview</v-btn>
+            <v-btn @click="save()">Save</v-btn>
+            <v-btn @click="cancel()">Cancel</v-btn>
+        </v-row>
     </div>
 </template>
 
