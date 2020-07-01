@@ -1,11 +1,20 @@
 <template>
-    <div id="home">
-        <div v-for="article in all_info" :key="article.name">
-            <button @click="jumpTo(article.name)">
-                {{article.name}}
-            </button>
-        </div>
-    </div>
+    <v-container>
+        <v-list>
+            <v-list-item-group v-model="model" mandatory color="indigo">
+                <v-list-item
+                        v-for="article in all_info"
+                        :key="article.name"
+                >
+
+                    <v-list-item-content center>
+                        <v-list-item-title v-text="article.name" @click="jumpTo(article.name)"></v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+            </v-list-item-group>
+        </v-list>
+
+    </v-container>
 </template>
 
 <script>
@@ -13,7 +22,8 @@
         name: "Home",
         data(){
             return {
-                all_info: []
+                all_info: [],
+                model: 1,
             }
         },
         methods:{
@@ -34,7 +44,7 @@
             }
         },
 
-        created() {
+        mounted() {
             this.fetchInfo()
         }
 
