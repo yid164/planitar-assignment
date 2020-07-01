@@ -1,26 +1,33 @@
 <template>
-    <div>
-        <v-col>
-            <v-list-item-title>{{articleName}}</v-list-item-title>
+    <v-card id="edit"
+            class="mx-auto"
+            color="white"
+            width="500px">
+        <v-card-text>
+            <p class="display-3 text--primary">
+                {{articleName}}
+            </p>
             <div v-if="!readyPreview">
                 <v-textarea v-model="currentContent"></v-textarea>
             </div>
             <div v-else>
-                <div v-if="currentContent === ''">
+                <div v-if="currentContent === ''" class="text--primary">
                     <p>No article with this exact name found， Use Edit button in the header to add it</p>
                 </div>
                 <div v-else>
-                    <html>{{currentContent}}</html>
-                    <v-btn @click="closePreview()">Close</v-btn>
+                    <span v-html="currentContent"></span>
                 </div>
+                <v-btn text color="red accent-4" @click="closePreview()">Close</v-btn>
             </div>
-        </v-col>
-        <v-row align="center">
-            <v-btn @click="preview()">Preview</v-btn>
-            <v-btn @click="save()">Save</v-btn>
-            <v-btn @click="cancel()">Cancel</v-btn>
-        </v-row>
-    </div>
+
+        </v-card-text>
+        <v-card-actions>
+            <v-btn text color="deep-purple accent-4" @click="preview()">Preview</v-btn>
+            <v-btn text color="green accent-4" @click="save()">Save</v-btn>
+            <v-btn text color="red accent-4" @click="cancel()">Cancel</v-btn>
+        </v-card-actions>
+    </v-card>
+
 </template>
 
 <script>

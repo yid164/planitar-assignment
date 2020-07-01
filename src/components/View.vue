@@ -3,7 +3,6 @@
          class="mx-auto"
          color="white"
          width="500px">
-
         <v-card-text>
             <p class="display-3 text--primary">
                 {{articleName}}
