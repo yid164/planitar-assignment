@@ -18,3 +18,5 @@
 
 ```in the back-end folder, please run go run main.go```
 
+##### How to test it
+```go test ```

@@ -11,7 +11,7 @@ import (
 
 // structure of wiki
 type Article struct {
-	Name    string `json:"name,omitempty"`
+	Name    string `json:"name"`
 	Content string `json:"content"`
 }
 
@@ -42,43 +42,44 @@ func GetArticle(w http.ResponseWriter, req *http.Request) {
 // Put an article
 func PutArticle(w http.ResponseWriter, req *http.Request) {
 	params := mux.Vars(req)
-	for _, item := range articles {
+	var isIncluded = false
+	var count = 0
+	for i, item := range articles {
 		if item.Name == params["name"] {
-			w.WriteHeader(200)
-			var article Article
-			_ = json.NewDecoder(req.Body).Decode(&article)
-			article.Name = params["name"]
-			item = article
-			fmt.Println(item)
-			json.NewEncoder(w).Encode(item)
-			return
+
+			isIncluded = true
+			count = i
+			fmt.Println(count)
 		}
 	}
 
-	var article Article
-	_ = json.NewDecoder(req.Body).Decode(&article)
-	article.Name = params["name"]
-	if len(article.Name) > 0 {
-		w.WriteHeader(201)
-		articles = append(articles, article)
+	if isIncluded {
+		w.WriteHeader(200)
+		var article Article
+		_ = json.NewDecoder(req.Body).Decode(&article)
+		article.Name = params["name"]
+		articles[count] = article
 		json.NewEncoder(w).Encode(article)
+
 	} else {
-		w.WriteHeader(400)
-		return
+		var article Article
+		_ = json.NewDecoder(req.Body).Decode(&article)
+		article.Name = params["name"]
+		if len(article.Name) > 0 {
+			w.WriteHeader(201)
+			articles = append(articles, article)
+			json.NewEncoder(w).Encode(article)
+
+		} else {
+			w.WriteHeader(400)
+
+		}
 	}
+
 }
 
 // run
 func main() {
-
-	articles = append(articles, Article{
-		Name:    "Ford Mustang",
-		Content: "The Ford Mustang is a series of American automobiles manufactured by Ford.",
-	})
-	articles = append(articles, Article{
-		Name:    "Chevrolet Camaro",
-		Content: "The Chevrolet Camaro is a mid-size American automobile manufactured by Chevrolet.",
-	})
 
 	// Get handle function:
 	router := mux.NewRouter()
