@@ -1,7 +1,10 @@
 <template>
     <div id="home">
-        <h1>Hello</h1>
-        <div>{{all_info}}</div>
+        <div v-for="article in all_info" :key="article.name">
+            <button @click="jumpTo(article.name)">
+                {{article.name}}
+            </button>
+        </div>
     </div>
 </template>
 
@@ -25,6 +28,9 @@
                         this.all_info = result.data
                         console.log(result.data)
                     })
+            },
+            jumpTo:function (name) {
+                this.$router.push('/'+name);
             }
         },
 
