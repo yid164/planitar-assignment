@@ -18,7 +18,7 @@
         },
         methods:{
             fetchInfo:function () {
-                const url = 'articles/'
+                const url = '/articles/'
                 this.axios.get(url, {
                     headers: {
                         'Content-Type': '*',

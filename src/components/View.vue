@@ -29,7 +29,7 @@
         },
         methods:{
             fetchContent:function () {
-                const url = 'articles/'+this.articleName
+                const url = '/articles/'+this.articleName
                 this.axios.get(url, {
                     headers: {
                         'Content-Type': '*',
