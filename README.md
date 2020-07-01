@@ -14,3 +14,7 @@
 
 ``` I tested the code on the Postman, it returns all the requirmental code ```
 
+#### How to run it
+
+```in the back-end folder, please run go run main.go```
+
