@@ -38,7 +38,9 @@
                     .then((result)=>{
                         this.all_info = result.data
                         console.log(result.data)
+                        return result
                     })
+                .catch(e => e)
             },
             jumpTo:function (name) {
                this.$router.push('/'+name);
