@@ -34,4 +34,4 @@ Build a single page application for managing a Markdown-based wiki. The app shou
 
 #### How to run it
 ``npm install``
-``npm run serve``
+```npm run serve```
